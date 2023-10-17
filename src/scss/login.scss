@@ -1,0 +1,38 @@
+@import 'Colors.scss';
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    background-color: $bg-secondary;
+    border-radius: $form-border-radius;
+
+    padding: 15px;
+
+    width: 370px;
+    color: $text-primary;  
+
+
+    .header{
+        text-align: center;
+        font-size: xx-large;      
+    }
+
+    .input{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        
+
+        input{
+            background-color: $text-input;
+            border-radius: $border-radius;
+
+            padding: 4px 8px;
+
+            transition: 250ms;
+        }
+    }
+}
