@@ -1,12 +1,16 @@
 <?php
 include './allow_cors.php';
-
+include './db.php';
 include './functions.php';
+include './Models/user.php';
+
+$usr = new Users($GLOBALS['sql']);
 
 
-@session_start();
-if(!isset($_SESSION['movie-hub']) || isset($_SESSION['movie-hub']['login'])){
+if(!$usr->logged_in()){
     error('Login is required!');
 }
+
+success($usr->get_public_userinfo());
 
 ?>

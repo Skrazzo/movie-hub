@@ -2,18 +2,30 @@ import React, { useState } from 'react';
 import '../scss/login.scss';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { form_to_obj } from '../functions';
+import { form_to_obj, get_form_object } from '../functions';
+
 
 
 export default function Login() {
     const navigate = useNavigate();
+    const [error, setError] = useState(false);
 
     function loginHandler(){
-        
+        const obj = get_form_object('login_form');
+        if(obj.username === '' || obj.password === ''){
+            setError(true);
+        }
 
-        axios.post('login.php', form_to_obj('login_form')).then((res) => {
-            console.log(res.data);
-        });
+        if(!error){
+            axios.post('login.php', form_to_obj('login_form')).then((res) => {
+                if(res.data.code === 0){
+                    setError(true);
+                }else{
+                    navigate('/');
+                }
+
+            });
+        }
     }
 
     return (
@@ -23,14 +35,14 @@ export default function Login() {
 
                 <form id='login_form'>
 
-                    <div className='input'>
+                    <div className={(error) ? 'input-error' : 'input'}>
                         <label>Username</label>
-                        <input name="username" />
+                        <input onChange={() => setError(false)} name="username" />
                     </div>
 
-                    <div className='input'>
+                    <div className={(error) ? 'input-error' : 'input'}>
                         <label>Password</label>
-                        <input name="password" type='password'/>
+                        <input onChange={() => setError(false)} name="password" type='password'/>
                     </div>
                 </form>
 
