@@ -1,6 +1,6 @@
 @import '../scss/Colors.scss';
 
-.header{
+.main-header{
     background-color: $bg-secondary;
     border-bottom: 2px solid lighten($color: $bg-secondary, $amount: 5);
     //border-bottom: 1px solid $primary;
@@ -109,17 +109,7 @@
                     width: 100%;
                 }
 
-                button{
-                    background-color: $primary;
-                    border-radius: $border-radius;
-
-                    padding: 4px 8px;
-
-                    &:focus{
-                        outline: 1px lighten($color: $primary, $amount: 20) solid;
-                        padding: 4px 12px;
-                    }
-                }
+                
             }
         }
 

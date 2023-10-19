@@ -18,12 +18,12 @@ export default function Header(props) {
                     <div className={'content '}>
                         <div className='search-input'>
                             <input placeholder='Movie Title' />
-                            <button>Search</button>
+                            <button className='btn-primary'>Search</button>
                         </div>
                     </div>
                 </dialog>
             </div>
-            <div className='header'>
+            <div className='main-header'>
                 <div>
                     <img src={props.pfp}/>
                     <span>{props.username}</span>
