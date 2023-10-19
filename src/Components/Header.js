@@ -1,9 +1,9 @@
 import { IconMenu2, IconX } from '@tabler/icons-react';
 import {React, useState} from 'react';
 import '../scss/Header.scss';
-
+import '../scss/login.scss';
 export default function Header(props) {
-    const [dialogOpen, setDialogOpen] = useState(false);
+    const [dialogOpen, setDialogOpen] = useState(true);
 
     return (
         
@@ -15,8 +15,11 @@ export default function Header(props) {
                         <IconX onClick={() => setDialogOpen(false)}/>
                     </div>
 
-                    <div className={'content'}>
-
+                    <div className={'content '}>
+                        <div className='search-input'>
+                            <input placeholder='Movie Title' />
+                            <button>Search</button>
+                        </div>
                     </div>
                 </dialog>
             </div>
