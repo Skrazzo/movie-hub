@@ -2,11 +2,18 @@ import { IconMenu2, IconX } from '@tabler/icons-react';
 import {React, useState} from 'react';
 import '../scss/Header.scss';
 import '../scss/login.scss';
-
+import axios from 'axios';
+import { form_to_obj, get_form_object } from '../functions';
 
 
 export default function Header(props) {
     const [dialogOpen, setDialogOpen] = useState(true);
+
+    function getMoviesSearch(){
+        axios.post('search_movies.php', form_to_obj('movie-search')).then((res) => {
+            console.log(res.data);
+        });
+    }
 
     return (
         
@@ -19,10 +26,13 @@ export default function Header(props) {
                     </div>
 
                     <div className={'content '}>
-                        <div className='search-input'>
-                            <input placeholder='Movie Title' />
-                            <button className='btn-primary'>Search</button>
-                        </div>
+                        
+                        <form onSubmit={(e) => e.preventDefault()} id="movie-search" className='search-input'>
+                            <input name="title" placeholder='Movie Title' />
+                            <button onClick={getMoviesSearch} className='btn-primary'>Search</button>
+
+                        </form>
+                        
                     </div>
 
                     <div>
