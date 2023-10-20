@@ -25,6 +25,7 @@ class TMDB{
                 'name' => $results[$i]['original_title'],
                 'poster' => $results[$i]['poster_path'],
                 'release_date' => $results[$i]['release_date'],
+                'overview' => $results[$i]['overview'],
                 'rating' => round($results[$i]['vote_average'], 2)]
             ));
         }

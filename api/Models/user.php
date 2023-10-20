@@ -12,11 +12,15 @@ class Users{
         return $this->sql->getValue('users', 'COUNT(*)');
     }
 
+    function phash($password){
+        return hash('sha256', $password);
+    }
+
     function register($username, $password, $pfp){
 
         $data = array(
             'username' => $username,
-            'password' => md5($password),
+            'password' => $this->phash($password),
             'pfp' => $pfp
         );
 
@@ -29,7 +33,7 @@ class Users{
 
     function login($username, $password){
         $this->sql->where('username', $username);
-        $this->sql->where('password', md5($password));
+        $this->sql->where('password', $this->phash($password));
         
 
         $usrID = $this->sql->getValue('users', 'id');

@@ -2,6 +2,9 @@ import { IconMenu2, IconX } from '@tabler/icons-react';
 import {React, useState} from 'react';
 import '../scss/Header.scss';
 import '../scss/login.scss';
+
+
+
 export default function Header(props) {
     const [dialogOpen, setDialogOpen] = useState(true);
 
@@ -20,6 +23,10 @@ export default function Header(props) {
                             <input placeholder='Movie Title' />
                             <button className='btn-primary'>Search</button>
                         </div>
+                    </div>
+
+                    <div>
+                        
                     </div>
                 </dialog>
             </div>
