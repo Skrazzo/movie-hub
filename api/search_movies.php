@@ -18,7 +18,7 @@ if(!isset($_POST['title'])){
     error('title is required');
 }
 
-echo json_encode($tmdb->search_by_title($_POST['title']));
+success($tmdb->search_by_title($_POST['title']));
 
 
 

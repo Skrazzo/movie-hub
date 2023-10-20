@@ -1,0 +1,51 @@
+@import './Colors.scss';
+
+/* For WebKit-based browsers (Google Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: $primary; /* Color of the thumb (the draggable part) */
+    border-radius: 10px; /* Border radius of the thumb */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: lighten($color: $bg-primary, $amount: 5); /* Background color of the track (the non-draggable part) with opacity */
+  }
+  
+  /* For Firefox */
+  /* You can also use scrollbar-color property for Firefox */
+  /* For Firefox 64 and earlier */
+  .scrollbar {
+    width: 8px;
+  }
+  
+  .scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 10px;
+  }
+  
+  .scrollbar-track {
+    background: lighten($color: $bg-primary, $amount: 5);
+  }
+  
+  /* For Firefox 65 and later */
+  /* scrollbar-color property is supported in Firefox 65+ */
+  /* Use it to set the thumb and track colors */
+  /* Example:
+  .scrollbar {
+    scrollbar-color: $primary lighten($color: $bg-primary, $amount: 5);
+  }
+  */
+  
+  /* For Internet Explorer/Edge */
+  /* You can use -ms prefixes for Internet Explorer */
+  /* This will only work in Internet Explorer and Microsoft Edge */
+  /* For newer versions of Edge, you can use the standard WebKit CSS */
+  * {
+    scrollbar-face-color: $primary;
+    scrollbar-track-color: lighten($color: $bg-primary, $amount: 5);
+    scrollbar-base-color: lighten($color: $bg-primary, $amount: 5);
+  }
+  

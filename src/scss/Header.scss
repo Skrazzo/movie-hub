@@ -59,7 +59,7 @@
         background-color: $bg-secondary;
         color: $text-primary;
 
-        min-width: 400px;
+        
 
         display: flex;
         flex-direction: column;
@@ -112,6 +112,8 @@
                 
             }
         }
+
+        
 
         animation: openDialog 500ms forwards;
     }

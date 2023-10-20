@@ -1,0 +1,80 @@
+@import './Colors.scss';
+
+.movie-search-result{
+    margin-top: 8px;
+
+    display: flex;
+    gap: 8px;
+    background-color: lighten($color: $bg-secondary, $amount: 2);
+    transition: 100ms;
+
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    max-width: 600px;
+
+    &:hover{
+        background-color: rgba($color: $primary, $alpha: 0.1);
+
+        .null-poster{
+            color: lighten($color: $primary, $amount: 15);
+            background-color: darken($color: $primary, $amount: 25);
+        }
+
+        .select-sidebar{
+            opacity: 1;
+            width: 8px;
+        }
+    }
+
+    img{
+        width: 75px;
+        min-width: 75px;
+    }
+
+    .select-description{
+        
+        overflow: hidden;
+        
+        max-height: 110px; /* Adjust the maximum width as per your requirements */
+
+        p{
+            &:nth-child(1){
+                font-weight: bold;
+                span{
+                    color: $text-secondary;
+                }
+            }
+
+            &:nth-child(2){
+                
+            }
+        }
+        
+    }
+
+    .null-poster{
+        display: grid;
+        place-items: center;
+
+        color: lighten($color: $bg-secondary, $amount: 15);
+        
+        background-color: lighten($color: $bg-secondary, $amount: 5);
+
+        width: 75px;
+        height: 130px;
+
+        transition: 250ms;
+    }
+
+    .select-sidebar{
+        opacity: 0.6;
+        background-color: $primary;
+
+        width: 4px;
+        height: 100%;
+
+        transition: 100ms;
+    }
+}
+

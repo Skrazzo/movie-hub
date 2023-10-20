@@ -4,14 +4,22 @@ import '../scss/Header.scss';
 import '../scss/login.scss';
 import axios from 'axios';
 import { form_to_obj, get_form_object } from '../functions';
-
+import MovieSearchSelect from './MovieSearchSelect';
+import '../scss/MovieSearchSelect.scss';
 
 export default function Header(props) {
     const [dialogOpen, setDialogOpen] = useState(true);
+    const [searchResults, setsearchResults] = useState([]);
+
 
     function getMoviesSearch(){
         axios.post('search_movies.php', form_to_obj('movie-search')).then((res) => {
-            console.log(res.data);
+            if(res.data.code === 0){
+                alert("Error: "+ res.data.reason);
+            }else{
+                console.log(res.data.reason);
+                setsearchResults(res.data.reason);
+            }
         });
     }
 
@@ -35,8 +43,8 @@ export default function Header(props) {
                         
                     </div>
 
-                    <div>
-                        
+                    <div className='gap-4 max-h-96 primary-scroll'>
+                        {searchResults.map((x) => <MovieSearchSelect arg={x} />)}
                     </div>
                 </dialog>
             </div>
