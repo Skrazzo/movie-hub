@@ -8,6 +8,7 @@ import Login from './Routes/Login';
 import Register from './Routes/Register';
 import { Notifications } from '@mantine/notifications';
 import { MantineProvider } from '@mantine/core';
+import Review from './Routes/Review';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -37,6 +38,7 @@ root.render(
                 <Route index element={<App />}/>
                 <Route path='/login' element={<Login />}/>
                 <Route path='/register' element={<Register />}/>
+                <Route path='/review/:tmdb_id' element={<Review />}/>
 
             </Routes>
         </HashRouter>

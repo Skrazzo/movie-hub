@@ -1,7 +1,7 @@
 <?php
 
 class TMDB{
-    private $link_base_movie = "https://api.themoviedb.org/3/search/movie?api_key="; // link start
+    private $link_search_base_movie = "https://api.themoviedb.org/3/search/movie?api_key="; // link start
     private $api_key = '';
 
     function __construct($api_key){
@@ -12,7 +12,7 @@ class TMDB{
         $searchValue = 'shrek';
         $query = "&query=" . str_replace(" ", "+", $title);
 
-        $full_search_link = $this->link_base_movie . $this->api_key . $query;
+        $full_search_link = $this->link_search_base_movie . $this->api_key . $query;
 
         $results = json_decode(file_get_contents($full_search_link), true);
         $results = $results['results'];
@@ -31,6 +31,10 @@ class TMDB{
         }
 
         return $res;
+    }
+
+    function get_movie_by_tmdbid($id){
+
     }
 }
 
