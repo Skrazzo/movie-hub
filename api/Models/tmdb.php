@@ -34,7 +34,18 @@ class TMDB{
     }
 
     function get_movie_by_tmdbid($id){
+        $arr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'. $id .'?api_key='. $this->api_key), true);
+        $rtn_arr = array(
+            'backdrop' =>       $arr['backdrop_path'],
+            'title' =>          $arr['original_title'],
+            'overview' =>       $arr['overview'],
+            'poster' =>         $arr['poster_path'],
+            'release_date' =>   $arr['release_date'],
+            'tagline' =>        $arr['tagline'],
+            'vote_average' =>   $arr['vote_average']
+        );
 
+        return $rtn_arr;
     }
 }
 

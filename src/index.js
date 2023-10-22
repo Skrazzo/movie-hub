@@ -20,7 +20,7 @@ domain_detect();
 function domain_detect(){
     const currentDomain = window.location.hostname;
     const protocol = window.location.protocol;
-    window.baseImgUrl = '';
+    window.baseImgUrl = 'https://image.tmdb.org/t/p/original';
     
     window.baseApiUrl   = protocol + '//'+ currentDomain +'/movie-hub/api/'; // public url to your api files
     window.notification_color = '#FF9900';

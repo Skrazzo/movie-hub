@@ -1,13 +1,15 @@
 import React from 'react';
 import '../scss/Header.scss';
 import { IconPhotoFilled } from '@tabler/icons-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function MovieSearchSelect(arg) {
+    const navigate = useNavigate();
     const props = arg.arg;
-    console.log(props);
+    
 
     return (
-        <div className='movie-search-result'>
+        <div className='movie-search-result' onClick={() => navigate('/review/' + props.id)}>
             
             <div className='flex'>
                 <div className='select-sidebar'></div>
@@ -16,7 +18,7 @@ export default function MovieSearchSelect(arg) {
                         <IconPhotoFilled size={35}/>
                     </div>
                 :
-                    <img src={'https://image.tmdb.org/t/p/original'+ props.poster}/>
+                    <img src={window.baseImgUrl + props.poster}/>
                 }
             </div>
 
