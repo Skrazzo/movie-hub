@@ -4,6 +4,7 @@ import './scss/Main.scss';
 import './scss/scrollbar.scss';
 import { useNavigate } from 'react-router-dom';
 import Header from './Components/Header';
+import Info from './Components/Info';
 
 export default function App() {
     const navigate = useNavigate();
@@ -24,6 +25,7 @@ export default function App() {
     return (
         <>
             <Header username={userInfo.username} pfp={userInfo.pfp}/>
-        </>
+            <Info  />
+        </> 
     )
 }
