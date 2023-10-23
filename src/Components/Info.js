@@ -12,11 +12,9 @@ export default function Info() {
                 alert("Error: "+ res.data.reason);
             }else{
                 console.log(res.data.reason);
+                setMovieData(res.data.reason);
             }
-            setMovieData({
-                title: res.data.movie_title,
-                image: res.data.movie_img,
-            });
+            
         });
     }, []);
     return (
