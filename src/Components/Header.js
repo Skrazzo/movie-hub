@@ -8,7 +8,7 @@ import MovieSearchSelect from './MovieSearchSelect';
 import '../scss/MovieSearchSelect.scss';
 
 export default function Header(props) {
-    const [dialogOpen, setDialogOpen] = useState(true);
+    const [dialogOpen, setDialogOpen] = useState(false);
     const [searchResults, setsearchResults] = useState([]);
 
 
