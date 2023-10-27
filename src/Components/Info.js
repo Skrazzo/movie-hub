@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 export default function Info() {
-    const [movieData, setMovieData] = useState({title: '', image: ''});
+    const [movieData, setMovieData] = useState([]);
     useEffect(() => {
         axios.get('get_index_info.php').then((res) => {
             
@@ -17,12 +17,19 @@ export default function Info() {
             
         });
     }, []);
+
     return (
         <>
             <div className="infocontainer">
                 <div className="moviereview">
-                    <img src={movieData.movie_img} alt={movieData.movie_title} />
-                    <h1>{movieData.movie_title}</h1>
+                    {movieData.map((x) => {
+                        return (
+                            <>
+                                <img src={x.movie_img}/>
+                                <p className='text-white'>{x.movie_title} <span className='text-gray-500'>({x.movie_year})</span></p>
+                            </>
+                        );
+                    })}
                 </div>
             </div>
         </>
