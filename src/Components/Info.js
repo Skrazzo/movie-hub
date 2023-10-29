@@ -26,7 +26,7 @@ export default function Info() {
                         return (
                             <>
                                 <img src={x.movie_img}/>
-                                <p className='text-white'>{x.movie_title} <span className='text-gray-500'>({x.movie_year})</span></p>
+                                <p className='text-white'>{x.movie_title} <span className='text-secondary'>({x.movie_year})</span></p>
                             </>
                         );
                     })}
