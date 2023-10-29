@@ -3,12 +3,36 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../scss/Review.scss';
 import StarRating from '../Components/StarRating';
+import { object_to_urlsearchparams } from '../functions';
+
 
 export default function Review() {
     const [movieData, setMovieData] = useState({});
     const [yourRating, setYourRating] = useState(0);
+    const [requestPending, setRequestPending] = useState(false);
     // Use the useParams hook to access route parameters
     const { tmdb_id } = useParams();
+
+    function uploadRating(rating){
+        // rating has changed, so that means we need to update the database
+        const data = {
+            tmdb_id: tmdb_id,
+            rating: rating
+        }
+
+        if(!requestPending){ // before sending another request, validate that another one is not pending
+            setRequestPending(true);
+            axios.post('add_rating.php', object_to_urlsearchparams(data)).then((res) => {
+                if(res.data.code === 0){
+                    alert(res.data.reason);
+                }else{
+                    // upadet rating in real time
+                    setRequestPending(false);
+                }
+            });
+
+        }
+    }
 
     useEffect(() => {
         axios.get('get_movie.php?id=' + tmdb_id).then((res) => {
@@ -20,8 +44,9 @@ export default function Review() {
     }, []);
 
     useEffect(() => {
-        console.log(yourRating);
-    }, [yourRating]);
+        console.log('Current request:', requestPending);
+
+    }, [requestPending]);
 
     return (
         <div className='text-white'>
@@ -53,7 +78,7 @@ export default function Review() {
 
                     <div className='text-primary mt-2'>
                         <h3 className='text-xl font-semibold'>Leave your rating</h3>
-                        <StarRating setRating={(x) => setYourRating(x)} defaultRating={5} />
+                        <StarRating setRating={(x) => uploadRating(x)} defaultRating={0} />
                     </div>
                 </div>
                 

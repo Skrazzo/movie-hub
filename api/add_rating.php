@@ -16,7 +16,6 @@ if(!$usr->logged_in()){
     error('Login is required!');
 }
 
-$_POST = $_GET;
 
 // check if information was given
 if(!isset($_POST['tmdb_id']) || !isset($_POST['rating'])){
