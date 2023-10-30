@@ -1,13 +1,6 @@
 @import 'Colors.scss';
 
 
-.infocontainer{
-    width: auto;
-    height: auto;
-    display: flex;
-
-}
-
 .moviereview{
     position: relative;
     background-color: transparent;
@@ -38,7 +31,7 @@
 .reviewimg{
     border-radius: $border-radius;
     height: auto;
-    width: 300px;
+    width: 100%;
     
     &:hover{
         filter: blur(3px);
