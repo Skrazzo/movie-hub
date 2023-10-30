@@ -20,6 +20,14 @@ input:focus{
     outline: 1px solid $primary;
 }
 
+.text-primary{
+    color: $text-primary;
+}
+
+.text-secondary{
+    color: $text-secondary;
+}
+
 .orange-span{
     color: $primary;
 }
