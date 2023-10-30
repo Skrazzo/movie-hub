@@ -25,7 +25,10 @@ export default function Info() {
                     {movieData.map((x) => {
                         return (
                             <>
+                            <div className='movieimg'>
                                 <img src={x.movie_img}/>
+                            </div>
+                            <div className='img-overlay'></div>
                                 <p className='text-white'>{x.movie_title} <span className='text-gray-500'>({x.movie_year})</span></p>
                             </>
                         );
