@@ -49,7 +49,7 @@ export default function Review() {
     }, [requestPending]);
 
     return (
-        <div className='text-white'>
+        <div className=''>
             {/* <img src={window.baseImgUrl + movieData.backdrop}/> */}
             <div className='movie-info-container' style={{
                 backgroundImage: 'url('+ window.baseImgUrl + movieData.backdrop +')',
