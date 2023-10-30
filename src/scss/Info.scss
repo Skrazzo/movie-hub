@@ -1,21 +1,47 @@
 @import 'Colors.scss';
 
+img{
+    border-radius: $border-radius;
+}
+
 .infocontainer{
     width: auto;
     height: auto;
     display: flex;
+
 }
 
 .moviereview{
-    background-color: $secondary;
+    background-color: transparent;
     transition: box-shadow 0.3s;
     margin: 20px;
-    height: 500px;
+    height: auto;
     width: 300px;
-
     border-radius: $border-radius;
+
+}
+
+.movieimg{
+    height: auto;
+    border-radius: $border-radius;
+    transition: box-shadow 0.3s;
 
     &:hover{
         box-shadow: 0px 0px 15px orange;
+
+    }
+}
+
+.img-overlay{
+    position: absolute;
+    border-radius: $border-radius;
+    transition: box-shadow 0.3s;
+    height: auto;
+    width: auto;
+    // display: none;
+    
+    &:hover{
+        display: block;
+        filter: blur(3px);
     }
 }

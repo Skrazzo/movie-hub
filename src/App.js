@@ -25,7 +25,7 @@ export default function App() {
     return (
         <>
             <Header username={userInfo.username} pfp={userInfo.pfp}/>
-            <Info  />
+            <Info />
         </> 
     )
 }
