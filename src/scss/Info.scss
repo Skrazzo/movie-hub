@@ -2,6 +2,8 @@
 
 img{
     border-radius: $border-radius;
+    height: auto;
+    width: 300px;
 }
 
 .infocontainer{
@@ -12,23 +14,24 @@ img{
 }
 
 .moviereview{
+    position: relative;
     background-color: transparent;
     transition: box-shadow 0.3s;
     margin: 20px;
     height: auto;
-    width: 300px;
+    width: auto;
     border-radius: $border-radius;
-
 }
 
 .movieimg{
+    position: relative;
     height: auto;
     border-radius: $border-radius;
-    transition: box-shadow 0.3s;
+    transition: 0.3s;
 
     &:hover{
-        box-shadow: 0px 0px 15px orange;
-
+        box-shadow: 0px 0px 15px $primary;
+        filter: blur(3px);
     }
 }
 
@@ -38,10 +41,9 @@ img{
     transition: box-shadow 0.3s;
     height: auto;
     width: auto;
-    // display: none;
+    display: none;
     
     &:hover{
         display: block;
-        filter: blur(3px);
     }
 }
