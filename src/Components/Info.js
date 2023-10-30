@@ -21,20 +21,20 @@ export default function Info() {
     return (
         <>
             <div className="infocontainer">
-                <div className="moviereview">
                     {movieData.map((x) => {
                         return (
-                            <>
-                            <div className='movieimg'>
-                                <img src={x.movie_img}/>
-                            </div>
-                            <div className='img-overlay'></div>
+                            <div className="moviereview">
+                                <div className='movieimg'>
+                                    <img src={window.baseImgUrl+x.movie_img}/>
+                                </div>
+                                <div className='img-overlay'>
+                                    <p></p>
+                                    <p></p>
+                                </div>
                                 <p className='text-white'>{x.movie_title} <span className='text-secondary'>({x.movie_year})</span></p>
-
-                            </>
+                            </div>
                         );
                     })}
-                </div>
             </div>
         </>
     )
