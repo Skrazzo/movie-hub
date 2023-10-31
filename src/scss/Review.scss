@@ -4,3 +4,17 @@
     display: flex;
     padding: 25px;
 }
+
+.movie-info-overlay{
+    position: absolute;
+    width: 100%;
+    
+    top: 0;
+    left: 0;
+
+    background-color: $primary;
+    
+    opacity: 0.3;
+    z-index: 1;
+}
+

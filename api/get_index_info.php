@@ -14,6 +14,15 @@ if(!$usr->logged_in()){
     error('Login is required!');
 }
 
-success($sql->get('movie'));
+
+$movie = $sql->get('movie');
+for($i = 0; $i < count($movie); $i++){
+    $sql->where('movie_id', $movie[$i]['id']);
+    $avg = $sql->getValue('movie_ratings', 'AVG(rating)');
+
+    $movie[$i]['rating'] = $avg;
+}
+
+success($movie);
 
 ?>
