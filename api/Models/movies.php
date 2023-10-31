@@ -56,6 +56,18 @@ class Movies{
         if(!$id) return false;
         return true;
     }
+
+    function insert_new_comment($userID, $movieID, $comment){
+        $data = array(
+            'user_id' => $userID,
+            'movie_id' => $movieID,
+            'comment' => $comment
+        );
+
+        $id = $this->sql->insert('comments', $data);
+        if(!$id) return false;
+        return true;
+    }
 }
 
 ?>
