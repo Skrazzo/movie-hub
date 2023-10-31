@@ -28,12 +28,12 @@ export default function Comments(props) {
     return (
         <div className='container mx-auto xl:max-w-4xl comments-container'>
             <div className='max-w-4xl flex'>
-                <p className='font-medium'>Comm</p><p className='orange-span font-medium'>ents</p>
+                <p className='font-medium text-primary'>Comm</p><p className='orange-span font-medium'>ents</p>
             </div>
             <div className=''>
                 <form id='comment_form' className="flex gap-2 items-center" onSubmit={(e) => postHandler(e)}>
                     <div className='comment-input w-full'>
-                        <input type='text' name='comment' className='' placeholder='Write comment'></input>
+                        <input type='text' name='comment' className='text-primary' placeholder='Write comment'></input>
                     </div>
                     <button className='btn-primary uppercase'>post</button> 
                 </form>
