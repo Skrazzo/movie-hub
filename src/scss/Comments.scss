@@ -1,0 +1,39 @@
+@import './Colors.scss';
+
+.comments-container{
+    background-color: $bg-secondary ;
+    padding: 8px;
+}
+
+.comment-input{
+    background: linear-gradient(90deg, $primary, transparent);
+    padding-bottom: 1px;
+
+    input{
+        background-color: $bg-secondary;
+        border: none;
+        outline: none;
+        width: 100%;
+    }
+}
+
+
+.comment-box{
+    margin-top: 20px;
+}
+
+.single-comment{
+    margin-top: 16px;
+    padding: 8px;
+    background-color: $comment-primary;
+    border-radius: $border-radius;
+    border-left: 2px solid $primary;
+
+    img{
+        border-color: $primary;
+        margin: 8px;
+    }
+}
+
+
+
