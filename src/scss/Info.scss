@@ -15,7 +15,7 @@
     position: relative;
     height: auto;
     border-radius: $border-radius;
-    transition: 0.3s;
+    transition: box-shadow 0.3s;
     display: grid;
     place-items: center;
 
@@ -25,11 +25,13 @@
     &:hover > .img-overlay{
         display: flex;
         flex-direction: row;
+        
     }
 }
 
 .reviewimg{
     border-radius: $border-radius;
+    transition: 0.3s;
     height: auto;
     width: 100%;
     
@@ -41,7 +43,6 @@
 .img-overlay{
     position: absolute;
     border-radius: $border-radius;
-    transition: box-shadow 0.3s;
     z-index: 99999;
     height: auto;
     width: auto;
