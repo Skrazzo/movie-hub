@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import '../scss/Review.scss';
 import StarRating from '../Components/StarRating';
 import { object_to_urlsearchparams } from '../functions';
+import '../scss/Comments.scss';
 
 
 export default function Review() {
@@ -54,7 +55,7 @@ export default function Review() {
             <div className='movie-info-container' style={{
                 backgroundImage: 'url('+ window.baseImgUrl + movieData.backdrop +')',
                 backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat' 
+                backgroundRepeat: 'no-repeat'
             }}>
                 <img className='max-h-96 rounded mr-3 shadow shadow-xl' src={window.baseImgUrl + movieData.poster} />
                 <div className='max-w-4xl'>
@@ -82,6 +83,27 @@ export default function Review() {
                     </div>
                 </div>
                 
+            </div>
+
+            <div className='container mx-auto xl:max-w-4xl comments-container'>
+                <div className='max-w-4xl flex'>
+                    <p className='font-medium'>Comm</p><p className='orange-span font-medium'>ents</p>
+                </div>
+                <div className='flex items-center gap-2'>
+                    <div className='comment-input w-full'><input type='text' name='comment' placeholder='Write comment'></input></div>
+                    <button className='btn-primary uppercase'>post</button> 
+                </div>
+                <div className='comment-box'>
+                    <div className='single-comment'>
+                        <div className='comment-header flex items-center'>
+                            <img className='rounded-full h-12 w-12 border-2' src='https://i.pinimg.com/236x/80/87/65/80876535c7869d8df99da95845508b02.jpg'></img>
+                            <h1 className='font-medium text-xl'>KkarliskK</h1>
+                        </div>
+                        <div className='comment-desc'>
+                            <p className='italic'>I really liked when he went fishing in new york, he gained a lot of sexual experience recommend it to children and new borns 10/10</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
